@@ -1,0 +1,3 @@
+In Next.js 15, an uncommon issue arises when using the `app` directory and server components with specific middleware configurations.  If a server component attempts to access a protected route (e.g., requiring authentication) before the middleware has a chance to execute, it can lead to unexpected behavior or errors.  This is different from pages in the `pages` directory where middleware would always run before a page request.
+
+For example, if you have a server component fetching data that requires an authenticated user, and you don't account for the missing authentication details, the request will fail, and the component might not handle the error gracefully.
